@@ -1,0 +1,26 @@
+# Exported from Render on 2024-04-29T10:40:02Z
+databases:
+- name: name
+  databaseName: name_nuuk
+  user: name_nuuk_user
+  plan: free
+  region: oregon
+  ipAllowList:
+  - source: 0.0.0.0/0
+    description: everywhere
+  postgresMajorVersion: "16"
+services:
+- type: web
+  name: with-nandini
+  runtime: static
+  repo: https://github.com/nandini2001d/firbaseloginrect
+  buildCommand: npm run build
+  staticPublishPath: build
+- type: web
+  name: newone:newonetodo
+  runtime: image
+  image:
+    url: docker.io/doc200/newone:newonetodo
+  plan: free
+  region: oregon
+version: "1"
